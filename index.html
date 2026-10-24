@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="parisian-creme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tendresse.bd | Gentle Luxury & Curated Cosmetics</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* DYNAMIC LUXURY COLOR PALETTES (Live Transitions) */
+    :root, [data-theme="parisian-creme"] {
+      --bg-page: #fdf8f5;
+      --bg-surface: #ffffff;
+      --bg-panel: #fcf1ec;
+      --bg-header: rgba(253, 248, 245, 0.94);
+      --text-main: #241c1e;
+      --text-muted: #786b6e;
+      --accent-rose: #a85464;
+      --accent-rose-soft: #f4dcd9;
+      --accent-banner: #b0746b;
+      --accent-banner-text: #ffffff;
+      --btn-dark: #241c1e;
+      --btn-dark-text: #ffffff;
+      --btn-light: #ffffff;
+      --btn-light-border: #ebd3ce;
+      --btn-light-text: #241c1e;
+      --border-subtle: rgba(168, 84, 100, 0.16);
+      --badge-bg: #fae4df;
+      --badge-text: #a85464;
+    }
+
+    [data-theme="bold-noir"] {
+      --bg-page: #09090b;
+      --bg-surface: #121217;
+      --bg-panel: #1b1a23;
+      --bg-header: rgba(9, 9, 11, 0.94);
+      --text-main: #f9f6f6;
+      --text-muted: #a19ea8;
+      --accent-rose: #f4a6b8;
+      --accent-rose-soft: rgba(244, 166, 184, 0.15);
+      --accent-banner: #1f1b24;
+      --accent-banner-text: #f4a6b8;
+      --btn-dark: #f4a6b8;
+      --btn-dark-text: #09090b;
+      --btn-light: #16151c;
+      --btn-light-border: rgba(244, 166, 184, 0.3);
+      --btn-light-text: #ffffff;
+      --border-subtle: rgba(244, 166, 184, 0.22);
+      --badge-bg: rgba(244, 166, 184, 0.15);
+      --badge-text: #f4a6b8;
+    }
+
+    [data-theme="rose-silk"] {
+      --bg-page: #2a161d;
+      --bg-surface: #381e28;
+      --bg-panel: #452632;
+      --bg-header: rgba(42, 22, 29, 0.94);
+      --text-main: #fff0f3;
+      --text-muted: #e2bcc6;
+      --accent-rose: #fda4af;
+      --accent-rose-soft: rgba(253, 164, 175, 0.18);
+      --accent-banner: #552735;
+      --accent-banner-text: #ffe4e6;
+      --btn-dark: #fda4af;
+      --btn-dark-text: #2a161d;
+      --btn-light: #381e28;
+      --btn-light-border: #a85464;
+      --btn-light-text: #ffffff;
+      --border-subtle: rgba(253, 164, 175, 0.24);
+      --badge-bg: #552735;
+      --badge-text: #fda4af;
+    }
+
+    [data-theme="clean-alabaster"] {
+      --bg-page: #ffffff;
+      --bg-surface: #f9fafb;
+      --bg-panel: #f3f4f6;
+      --bg-header: rgba(255, 255, 255, 0.96);
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent-rose: #e11d48;
+      --accent-rose-soft: #ffe4e6;
+      --accent-banner: #111827;
+      --accent-banner-text: #ffffff;
+      --btn-dark: #111827;
+      --btn-dark-text: #ffffff;
+      --btn-light: #ffffff;
+      --btn-light-border: #e5e7eb;
+      --btn-light-text: #111827;
+      --border-subtle: #e5e7eb;
+      --badge-bg: #f3f4f6;
+      --badge-text: #111827;
+    }
+
+    /* GLOBAL TRANSITION FOR LIVE PALETTE SWITCH */
+    *, *::before, *::after {
+      transition: background-color 0.35s ease, border-color 0.35s ease, color 0.25s ease;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .font-luxury {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .theme-header {
+      background-color: var(--bg-header);
+      border-color: var(--border-subtle);
+    }
+
+    .theme-surface {
+      background-color: var(--bg-surface);
+      border-color: var(--border-subtle);
+    }
+
+    .theme-panel {
+      background-color: var(--bg-panel);
+      border-color: var(--border-subtle);
+    }
+
+    .theme-btn-dark {
+      background-color: var(--btn-dark);
+      color: var(--btn-dark-text);
+    }
+
+    .theme-btn-light {
+      background-color: var(--btn-light);
+      border-color: var(--btn-light-border);
+      color: var(--btn-light-text);
+    }
+
+    .theme-badge {
+      background-color: var(--badge-bg);
+      color: var(--badge-text);
+    }
+
+    .theme-accent-text {
+      color: var(--accent-rose);
+    }
+
+    .theme-banner {
+      background-color: var(--accent-banner);
+      color: var(--accent-banner-text);
+    }
+
+    /* Hide number spinners */
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+    /* Rainbow Sparkle Button */
+    .rainbow-sparkle-btn {
+      background: #181619;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+    .rainbow-sparkle-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 30px rgba(168, 84, 100, 0.35);
+    }
+  </style>
+</head>
+<body class="selection:bg-rose-200 selection:text-neutral-900 pb-20">
+
+  <!-- ============================================================ -->
+  <!-- 1. TOP ANNOUNCEMENT BANNER                                   -->
+  <!-- ============================================================ -->
+  <aside class="theme-banner py-2 px-3 text-[11px] sm:text-xs text-center font-normal tracking-wide flex items-center justify-center space-x-2">
+    <span>Free delivery on debut pre-orders across Bangladesh</span>
+    <span class="opacity-40">•</span>
+    <span class="font-medium">Inside Dhaka: ৳70 | Outside Dhaka: ৳130</span>
+  </aside>
+
+  <!-- ============================================================ -->
+  <!-- 2. STICKY NAVBAR (MATCHING SCREENSHOT EXACTLY)               -->
+  <!-- ============================================================ -->
+  <header class="sticky top-0 z-40 theme-header backdrop-blur-md border-b px-4 sm:px-6 h-16 flex items-center justify-between">
+    
+    <!-- Left Navigation Controls: Hamburger + Three-Dot Button -->
+    <div class="flex items-center space-x-2 sm:space-x-3">
+      <!-- Hamburger Menu -->
+      <button onclick="toggleMobileMenu()" class="p-2 -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Open Navigation">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Three-Dot Button (Opens "Why Choose Us" Modal) -->
+      <button onclick="openWhyChooseUsModal()" class="flex items-center space-x-1 px-2 py-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors group" title="Why Choose Us">
+        <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100"></span>
+      </button>
+    </div>
+
+    <!-- Center Brand Logo with .BD Badge -->
+    <a href="#" class="flex items-center justify-center space-x-1 focus:outline-none">
+      <span class="font-luxury text-2xl sm:text-3xl font-medium tracking-normal">
+        tendresse
+      </span>
+      <span class="text-[9px] font-sans font-bold tracking-widest px-1.5 py-0.5 rounded-md theme-badge border border-black/5">
+        .BD
+      </span>
+    </a>
+
+    <!-- Right Controls: Search Icon & Circular Shopping Bag Icon with Live Badge -->
+    <div class="flex items-center space-x-2">
+      <!-- Search Button -->
+      <button onclick="openSearchModal()" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Search">
+        <i data-lucide="search" class="w-4 h-4"></i>
+      </button>
+
+      <!-- Beauty Bag Button -->
+      <button id="headerBagBtn" onclick="toggleBeautyBagDrawer()" class="relative w-10 h-10 rounded-full theme-surface border flex items-center justify-center shadow-sm hover:scale-105 active:scale-95 transition-all" aria-label="Shopping Bag">
+        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        <span id="bagBadgeCount" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 bg-[#9a4b59] text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-sm">
+          0
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- 3. SLIDE-OUT MENU DRAWER (PURE CATEGORIES - NO AUTH/NO LOGIN)-->
+  <!-- ============================================================ -->
+  <div id="sideMenuBackdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeSideMenu()"></div>
+
+  <div id="sideMenuDrawer" class="fixed inset-y-0 left-0 z-50 w-full max-w-xs sm:max-w-sm theme-surface border-r shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-out">
+    
+    <!-- Menu Top Bar: Centered "Menu" with Vibrant Pink '✕' Close Button -->
+    <div class="p-4 sm:p-5 border-b flex items-center justify-between relative">
+      <div class="w-7"></div>
+      <h3 class="text-base sm:text-lg font-semibold tracking-wide text-center">Menu</h3>
+      <button onclick="closeSideMenu()" class="p-1.5 text-rose-500 hover:text-rose-600 transition-colors" aria-label="Close Menu">
+        <i data-lucide="x" class="w-6 h-6 stroke-[2.2]"></i>
+      </button>
+    </div>
+
+    <!-- Category Accordion List (Directly under Menu title) -->
+    <div class="flex-1 overflow-y-auto px-4 py-3 divide-y divide-black/5 dark:divide-white/5 text-sm">
+      
+      <!-- 1. Makeup -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-makeup')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Makeup</span>
+          <span id="icon-cat-makeup" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-makeup" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Lips (Oils, Tints &amp; Glosses)</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Face &amp; Cheeks (Blushes, Bronzers, Tints)</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Eyes &amp; Brows (Lash &amp; Brow Care)</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Brushes &amp; Beauty Sponges</a>
+        </div>
+      </div>
+
+      <!-- 2. Skin -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-skin')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Skin</span>
+          <span id="icon-cat-skin" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-skin" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Barrier Serums &amp; Ampoules</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Hydrating Toners &amp; Essences</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Sunscreens &amp; UV Shields (K-Beauty)</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Gentle Cleansers &amp; Balms</a>
+        </div>
+      </div>
+
+      <!-- 3. Hair -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-hair')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Hair</span>
+          <span id="icon-cat-hair" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-hair" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Nourishing Hair Oils &amp; Elixirs</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Deep Conditioning Masks</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Sulfate-Free Shampoos &amp; Rinses</a>
+        </div>
+      </div>
+
+      <!-- 4. Personal Care -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-personal')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Personal Care</span>
+          <span id="icon-cat-personal" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-personal" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Rich Body Lotions &amp; Butters</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Exfoliating Body Polishes</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Hand &amp; Cuticle Creams</a>
+        </div>
+      </div>
+
+      <!-- 5. Mom & Baby -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-mombaby')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Mom &amp; Baby</span>
+          <span id="icon-cat-mombaby" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-mombaby" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Gentle Baby Lotions &amp; Washes</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Maternity Oils &amp; Balms</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Fragrance-Free Sensitive Care</a>
+        </div>
+      </div>
+
+      <!-- 6. Combo -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-combo')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Combo</span>
+          <span id="icon-cat-combo" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-combo" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Glow Routine Bundle</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Lip Oil &amp; Cheek Tint Set</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Curated Debut Gift Box</a>
+        </div>
+      </div>
+
+      <!-- 7. Jewellery & Accessories -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-jewellery')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Jewellery &amp; Vanity Tools</span>
+          <span id="icon-cat-jewellery" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-jewellery" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Rose Quartz Gua Sha &amp; Rollers</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Silk Hair Bands &amp; Scrunchies</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Minimalist Velvet Pouches</a>
+        </div>
+      </div>
+
+      <!-- 8. Clearance Sale -->
+      <div class="py-2.5">
+        <a href="#product-section" onclick="closeSideMenu()" class="flex items-center justify-between py-1.5 text-left font-medium text-rose-500 hover:text-rose-600 transition-colors">
+          <span>Clearance Sale</span>
+          <span class="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-500">Last Drops</span>
+        </a>
+      </div>
+
+      <!-- 9. Men -->
+      <div class="py-2.5">
+        <button onclick="toggleAccordion('cat-men')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
+          <span>Men</span>
+          <span id="icon-cat-men" class="text-lg font-light select-none text-neutral-500">+</span>
+        </button>
+        <div id="cat-men" class="hidden pl-3 pt-2 pb-1 space-y-2 text-xs opacity-85">
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Non-Greasy UV Protection</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Clarifying Facial Cleansers</a>
+          <a href="#product-section" onclick="closeSideMenu()" class="block py-1 hover:text-rose-500">Hydrating Lip Conditioners</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer in Menu: Policy, Why Choose Us & Theme Switcher -->
+    <div class="p-4 border-t border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] space-y-2 text-xs">
+      <div class="flex items-center justify-between py-1 opacity-80">
+        <span>Delivery Inside Dhaka:</span>
+        <span class="font-bold theme-accent-text">৳70</span>
+      </div>
+      <div class="flex items-center justify-between py-1 opacity-80">
+        <span>Delivery Outside Dhaka:</span>
+        <span class="font-bold theme-accent-text">৳130</span>
+      </div>
+      <div class="pt-2 flex gap-2">
+        <button onclick="closeSideMenu(); openWhyChooseUsModal();" class="flex-1 py-2.5 px-3 rounded-xl border theme-panel text-center font-medium hover:border-current transition-colors">
+          ••• Why Us
+        </button>
+        <button onclick="closeSideMenu(); openPaletteModal();" class="flex-1 py-2.5 px-3 rounded-xl border theme-panel text-center font-medium flex items-center justify-center space-x-1 hover:border-current transition-colors">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+          <span>Theme</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================ -->
+    <!-- 4. HERO SECTION (MATCHING SCREENSHOT 1 VERBATIM)             -->
+    <!-- ============================================================ -->
+    <section class="pt-8 pb-10 px-5 sm:px-6 max-w-xl mx-auto text-center">
+      
+      <!-- Parisian Grace Pill Badge -->
+      <div class="inline-block mb-6">
+        <span class="inline-flex items-center text-[10px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase px-4 py-1.5 rounded-full border theme-surface theme-accent-text border-current/25 shadow-sm">
+          PARISIAN GRACE • AUTHENTIC IMPORTS TO BANGLADESH
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-luxury text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.15] tracking-tight mb-5">
+        Gentle luxury, <span class="italic font-normal theme-accent-text">tender care</span> for your everyday glow.
+      </h1>
+
+      <!-- Body Narrative -->
+      <p class="text-xs sm:text-sm leading-relaxed mb-8 font-light opacity-90 max-w-lg mx-auto" style="color: var(--text-muted)">
+        Welcome to <strong class="font-semibold text-current">tendresse<span class="text-[10px] font-mono">.BD</span></strong>. We curate verified, cult-favorite international cosmetics, barrier-nourishing skincare, and dreamy lip oils—brought directly to your vanity with tailored local doorstep care across Bangladesh.
+      </p>
+
+      <!-- Dual Call to Action Buttons -->
+      <div class="space-y-3 max-w-md mx-auto">
+        <!-- Preview Debut Drops Button -->
+        <a href="#product-section" class="w-full py-4 px-6 rounded-full theme-btn-dark font-medium text-xs sm:text-sm tracking-wider flex items-center justify-center space-x-2 shadow-md hover:opacity-95 active:scale-[0.99] transition-all">
+          <span>Preview Debut Drops ↓</span>
+        </a>
+
+        <!-- DM on Instagram Button -->
+        <a href="https://www.instagram.com/tendresse.bd?srtk=bzQyODBpeXhkcjU2" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-full theme-btn-light border font-medium text-xs sm:text-sm tracking-wider flex items-center justify-center space-x-2 shadow-sm hover:border-current active:scale-[0.99] transition-all">
+          <i data-lucide="instagram" class="w-4 h-4 theme-accent-text"></i>
+          <span>DM on Instagram</span>
+        </a>
+      </div>
+
+      <!-- Three Pillars Footer Row -->
+      <div class="grid grid-cols-3 gap-2 pt-10 text-[10px] sm:text-xs text-center border-t border-black/5 dark:border-white/5 mt-8">
+        <div class="flex flex-col items-center">
+          <span class="text-rose-500 mb-1">💮</span>
+          <span class="font-semibold">100% Authentic</span>
+          <span class="text-[9px] opacity-70">Direct Brand Invoices</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-rose-500 mb-1">🚚</span>
+          <span class="font-semibold">Flat Delivery</span>
+          <span class="text-[9px] opacity-70">Inside ৳70 | Outside ৳130</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-rose-500 mb-1">💌</span>
+          <span class="font-semibold">Personal Shade Help</span>
+          <span class="text-[9px] opacity-70">Free DM Consultations</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 5. DEMO PRODUCT SECTION (ONLY ONE PRODUCT AS REQUESTED)      -->
+    <!-- ============================================================ -->
+    <section id="product-section" class="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
+      <div class="text-center mb-6">
+        <span class="text-[10px] uppercase tracking-widest font-bold theme-accent-text">Debut Spotlight</span>
+        <h2 class="font-luxury text-3xl sm:text-4xl">Available For Immediate Reservation</h2>
+      </div>
+
+      <!-- Spotlight Card -->
+      <div class="theme-surface rounded-3xl p-6 sm:p-8 border shadow-lg relative overflow-hidden">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Product Artwork Vector -->
+          <div class="md:col-span-5 flex items-center justify-center">
+            <div class="w-full max-w-[240px] aspect-[4/5] rounded-2xl theme-panel border flex flex-col items-center justify-center p-6 relative group">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-2xl pointer-events-none"></div>
+
+              <svg class="w-36 h-48 drop-shadow-md group-hover:scale-105 transition-transform duration-500" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="70" y="10" width="20" height="25" rx="3" fill="#d4af37" />
+                <rect x="65" y="35" width="30" height="12" rx="2" fill="#241c1e" stroke="#e6b89c" stroke-width="1.5" />
+                <rect x="67" y="47" width="26" height="15" fill="#36292c" />
+                <rect x="40" y="60" width="80" height="140" rx="14" fill="#ffffff" fill-opacity="0.9" stroke="#b0746b" stroke-width="1.5" />
+                <path d="M42 118 C 65 112, 95 120, 118 118 L 118 186 C 118 193, 113 198, 106 198 L 54 198 C 47 198, 42 193, 42 186 Z" fill="#f4a6b8" fill-opacity="0.55" />
+                <rect x="52" y="90" width="56" height="70" rx="4" fill="#fffaf8" stroke="#d4af37" stroke-width="0.75" />
+                <text x="80" y="114" text-anchor="middle" fill="#a85464" font-family="'Cormorant Garamond', serif" font-size="11" font-style="italic">tendresse</text>
+                <text x="80" y="128" text-anchor="middle" fill="#241c1e" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" letter-spacing="1.2">DEMO PRODUCT</text>
+                <line x1="62" y1="135" x2="98" y2="135" stroke="#d4af37" stroke-width="0.75" />
+                <text x="80" y="145" text-anchor="middle" fill="#786b6e" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" letter-spacing="0.5">50 ML / 1.7 FL OZ</text>
+              </svg>
+
+              <span class="mt-3 text-[10px] uppercase tracking-widest font-medium opacity-60">Verified Batch • Sealed</span>
+            </div>
+          </div>
+
+          <!-- Product Details & Quantity -->
+          <div class="md:col-span-7 space-y-5 text-left">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full theme-badge">
+                Curated Import • Original Lot
+              </span>
+              <div class="flex items-center space-x-1 text-amber-500 text-xs">
+                <span>★★★★★</span>
+                <span class="font-bold text-current">5.0</span>
+                <span class="opacity-60 text-[10px]">(Verified)</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="font-luxury text-3xl sm:text-4xl font-normal leading-tight">
+                Demo Product
+              </h3>
+              <p class="text-xs sm:text-sm mt-2 leading-relaxed opacity-80" style="color: var(--text-muted)">
+                An authentic, barrier-renewing international formula curated specifically for Dhaka’s climate. Procured straight from authorized overseas flagship boutiques and delivered with bubble-cushioned protective care.
+              </p>
+            </div>
+
+            <!-- Price & Delivery Mention -->
+            <div class="theme-panel rounded-2xl p-4 border flex items-baseline justify-between">
+              <div>
+                <span class="font-luxury text-3xl sm:text-4xl font-bold theme-accent-text">৳1,850</span>
+                <span class="text-xs opacity-70 ml-1">BDT</span>
+              </div>
+              <span class="text-[11px] font-medium opacity-80">Dhaka: ৳70 | Outside: ৳130</span>
+            </div>
+
+            <!-- Quantity Selector -->
+            <div class="space-y-1.5">
+              <label class="block text-xs uppercase tracking-wider font-semibold opacity-80">
+                Select Quantity:
+              </label>
+              <div class="flex items-center space-x-3">
+                <div class="flex items-center theme-panel border rounded-xl p-1">
+                  <button type="button" onclick="updateDemoQty(-1)" class="w-9 h-9 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 flex items-center justify-center font-bold text-base" aria-label="Decrease">
+                    -
+                  </button>
+                  <input type="number" id="productQtyDisplay" value="1" min="1" max="10" readonly class="w-12 text-center bg-transparent font-semibold text-sm focus:outline-none">
+                  <button type="button" onclick="updateDemoQty(1)" class="w-9 h-9 rounded-lg hover:bg-black/5 dark:hover:bg-white/10 flex items-center justify-center font-bold text-base" aria-label="Increase">
+                    +
+                  </button>
+                </div>
+                <span class="text-xs opacity-70">Subtotal: <strong class="text-current" id="productSubtotalPreview">৳1,850</strong></span>
+              </div>
+            </div>
+
+            <!-- Action Buttons: "Add to Beauty Bag" & "Instant Checkout" -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button type="button" onclick="addToBeautyBag()" class="w-full py-3.5 px-5 rounded-2xl theme-btn-dark font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md hover:opacity-90 active:scale-[0.98] transition-all">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                <span>Add to Beauty Bag</span>
+              </button>
+
+              <button type="button" onclick="instantBuyDemoProduct()" class="w-full py-3.5 px-5 rounded-2xl theme-btn-light border font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-sm hover:border-current active:scale-[0.98] transition-all">
+                <i data-lucide="zap" class="w-4 h-4 theme-accent-text"></i>
+                <span>Instant Checkout</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 6. ABOUT & FOOTER SECTION (MATCHING SCREENSHOT EXACTLY)      -->
+    <!-- ============================================================ -->
+    <footer id="about-brand" class="bg-[#19171a] text-white pt-14 pb-28 px-6 sm:px-8 border-t border-white/5 transition-colors duration-300">
+      <div class="max-w-xl mx-auto space-y-9 text-left">
+        
+        <!-- Brand Logo with Dusty Blush .BD Badge -->
+        <div class="flex items-center space-x-2">
+          <span class="font-luxury text-3xl sm:text-4xl font-normal tracking-tight text-white">
+            tendresse
+          </span>
+          <span class="text-[10px] font-sans font-bold tracking-widest px-2 py-0.5 rounded-full bg-[#ba6778] text-white shadow-sm">
+            .BD
+          </span>
+        </div>
+
+        <!-- Brand Manifesto Paragraph -->
+        <p class="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed max-w-md">
+          Curated authentic international cosmetics, French skincare treasures, and clean beauty delivered with tender care across Bangladesh.
+        </p>
+
+        <!-- 3 Circular Frosted Social Buttons (Instagram, Facebook, WhatsApp) -->
+        <div class="flex items-center space-x-3.5">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/tendresse.bd?srtk=bzQyODBpeXhkcjU2" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-[#29262b] hover:bg-[#38333b] border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 shadow-sm" aria-label="Instagram @tendresse.bd">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/share/1CXNJSd2bs/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-[#29262b] hover:bg-[#38333b] border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 shadow-sm" aria-label="Facebook Page">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp Direct Link -->
+          <a href="https://wa.me/qr/XX3H5YMAO6KRM1" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-[#29262b] hover:bg-[#38333b] border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 shadow-sm" aria-label="WhatsApp Concierge">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- EXPLORE SECTION -->
+        <div class="space-y-3.5">
+          <h4 class="text-xs font-bold tracking-[0.18em] text-neutral-200 uppercase">
+            EXPLORE
+          </h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-400 font-light">
+            <li>
+              <a href="#" class="hover:text-white transition-colors block py-0.5">Home</a>
+            </li>
+            <li>
+              <a href="#product-section" class="hover:text-white transition-colors block py-0.5">Debut Drop Preview</a>
+            </li>
+            <li>
+              <button type="button" onclick="openSideMenu()" class="hover:text-white transition-colors block py-0.5 text-left">Beauty Categories</button>
+            </li>
+            <li>
+              <button type="button" onclick="openWhyChooseUsModal()" class="hover:text-white transition-colors block py-0.5 text-left">Our Ethos</button>
+            </li>
+            <li>
+              <button type="button" onclick="openLaunchModal()" class="hover:text-white transition-colors block py-0.5 text-left">Join VIP List</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ORDERING & DELIVERY SECTION -->
+        <div class="space-y-3.5">
+          <h4 class="text-xs font-bold tracking-[0.18em] text-neutral-200 uppercase">
+            ORDERING &amp; DELIVERY
+          </h4>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-400 font-light">
+            <li>
+              <a href="https://www.instagram.com/tendresse.bd?srtk=bzQyODBpeXhkcjU2" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5">
+                How to Order via DM
+              </a>
+            </li>
+            <li class="py-0.5">
+              <span>Inside Dhaka: ৳70 (24–48h)</span>
+            </li>
+            <li class="py-0.5">
+              <span>Outside Dhaka: ৳130 (Pathao/Steadfast)</span>
+            </li>
+            <li class="py-0.5">
+              <span>Payment: bKash, Nagad, Cash on Delivery</span>
+            </li>
+            <li class="pt-0.5">
+              <button type="button" onclick="openCustomBrandModal()" class="text-[#cf8491] hover:text-[#e49ca8] transition-colors font-medium text-left">
+                Custom Brand Request
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DHAKA CONCIERGE -->
+        <div class="pt-8 border-t border-white/5 space-y-2 text-[11px] text-neutral-500 font-light">
+          <h5 class="text-xs font-bold tracking-[0.18em] text-neutral-400 uppercase">
+            DHAKA CONCIERGE
+          </h5>
+          <p>Verified authentic reseller procurement • Original store invoice guaranteed</p>
+          <p>Online concierge hours: 10:00 AM – 11:30 PM (Everyday)</p>
+          <p class="pt-2 text-neutral-600">© 2026 tendresse.bd • All rights reserved.</p>
+        </div>
+
+      </div>
+
+      <!-- CUSTOM BRAND REQUEST MODAL -->
+      <div id="customBrandModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-[#1f1d22] text-white w-full max-w-sm rounded-3xl p-6 border border-white/10 shadow-2xl space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 rounded-full bg-[#ba6778]"></span>
+              <h4 class="font-luxury text-2xl font-medium">Custom Sourcing</h4>
+            </div>
+            <button onclick="closeCustomBrandModal()" class="p-1 rounded-full text-neutral-400 hover:text-white">✕</button>
+          </div>
+
+          <p class="text-xs text-neutral-300 leading-relaxed font-light">
+            Want Rhode, Rare Beauty, Summer Fridays, or Korean skincare not listed yet? Send us the product name or link and we will procure it for you.
+          </p>
+
+          <form onsubmit="handleCustomSourcingSubmit(event)" class="space-y-3 pt-1">
+            <input type="text" id="customItemName" required placeholder="Brand &amp; Product (e.g. Rhode Lip Tint)" class="w-full text-xs p-3 rounded-xl bg-[#29262b] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-[#ba6778]">
+            <input type="tel" id="customUserPhone" required placeholder="Your WhatsApp / Phone (01XXXXXXXXX)" class="w-full text-xs p-3 rounded-xl bg-[#29262b] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-[#ba6778]">
+            
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-[#ba6778] hover:bg-[#c97587] text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-md">
+              Send Request via WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- 7. BEAUTY BAG DRAWER (EMPTY & POPULATED STATES)              -->
+  <!-- ============================================================ -->
+  <div id="beautyBagDrawerBackdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeBeautyBagDrawer()"></div>
+
+  <div id="beautyBagDrawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md theme-surface border-l shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <h3 class="font-luxury text-2xl sm:text-3xl font-medium">Your Beauty Bag</h3>
+        <span id="drawerItemsBadge" class="text-xs font-semibold px-2.5 py-0.5 rounded-full theme-badge">
+          0 items
+        </span>
+      </div>
+      <button onclick="closeBeautyBagDrawer()" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10" aria-label="Close Bag">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- DRAWER BODY CONTENT -->
+    <div class="flex-1 overflow-y-auto p-6 flex flex-col justify-between">
+      
+      <!-- STATE A: EMPTY STATE (MATCHING SCREENSHOT 2 EXACTLY) -->
+      <div id="emptyBagState" class="my-auto text-center space-y-6">
+        <div class="w-24 h-24 rounded-full theme-panel flex items-center justify-center mx-auto shadow-inner">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[#9a4b59]">
+            <i data-lucide="shopping-bag" class="w-10 h-10 stroke-[1.5]"></i>
+          </div>
+        </div>
+
+        <div class="space-y-3 max-w-xs mx-auto">
+          <h4 class="font-luxury text-3xl font-normal leading-snug">
+            Your bag is currently empty
+          </h4>
+          <p class="text-xs sm:text-sm leading-relaxed opacity-75" style="color: var(--text-muted)">
+            Our premier collection is dropping soon! Be ready to claim your favorite lip oils, serums, and mists before they sell out.
+          </p>
+        </div>
+
+        <div class="space-y-3 pt-2 max-w-sm mx-auto">
+          <button type="button" onclick="openLaunchModal()" class="w-full py-4 px-6 rounded-full theme-btn-dark font-medium text-xs sm:text-sm tracking-wider uppercase shadow-md active:scale-98 transition-all">
+            GET NOTIFIED ON LAUNCH DAY
+          </button>
+
+          <a href="https://www.instagram.com/tendresse.bd?srtk=bzQyODBpeXhkcjU2" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-full theme-btn-light border font-medium text-xs sm:text-sm tracking-wider flex items-center justify-center space-x-2 shadow-sm active:scale-98 transition-all">
+            <span>Chat on Instagram DM</span>
+          </a>
+        </div>
+
+        <p class="text-[11px] opacity-70 theme-accent-text font-medium pt-4">
+          Complimentary delivery on first drop pre-orders
+        </p>
+      </div>
+
+      <!-- STATE B: POPULATED STATE (FRICTIONLESS GUEST CHECKOUT) -->
+      <div id="populatedBagState" class="hidden space-y-6">
+        
+        <!-- Cart Item Summary -->
+        <div class="theme-panel rounded-2xl p-4 border space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-16 h-16 rounded-xl theme-surface border flex items-center justify-center flex-shrink-0">
+              <i data-lucide="sparkles" class="w-7 h-7 theme-accent-text"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h5 class="font-luxury text-xl font-medium truncate">Demo Product</h5>
+                <button onclick="removeDemoProductFromBag()" class="text-rose-500 hover:text-rose-700 p-1" title="Remove item">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <p class="text-xs opacity-70">Authentic Import • 50 ML</p>
+              <div class="flex items-center justify-between mt-2">
+                <span class="text-sm font-bold theme-accent-text">৳1,850 BDT</span>
+                <div class="flex items-center space-x-2 theme-surface border rounded-lg px-2 py-0.5">
+                  <button onclick="updateCartQty(-1)" class="text-xs font-bold px-1 hover:text-rose-500">-</button>
+                  <span id="cartQtyNumber" class="text-xs font-semibold w-4 text-center">1</span>
+                  <button onclick="updateCartQty(1)" class="text-xs font-bold px-1 hover:text-rose-500">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Fee Selector -->
+        <div class="space-y-2">
+          <label class="block text-xs uppercase tracking-wider font-semibold opacity-80">
+            Delivery Location &amp; Rates
+          </label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label class="p-3 rounded-xl border cursor-pointer theme-surface has-[:checked]:border-rose-500 has-[:checked]:ring-1 has-[:checked]:ring-rose-500 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold">Inside Dhaka</span>
+                <input type="radio" id="zoneRadioDhaka" name="bagDeliveryZone" value="Inside Dhaka" checked onchange="setBagZone(70, 'Inside Dhaka')" class="accent-rose-500">
+              </div>
+              <span class="text-sm font-bold theme-accent-text mt-1">৳70</span>
+            </label>
+
+            <label class="p-3 rounded-xl border cursor-pointer theme-surface has-[:checked]:border-rose-500 has-[:checked]:ring-1 has-[:checked]:ring-rose-500 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold">Outside Dhaka</span>
+                <input type="radio" id="zoneRadioOutside" name="bagDeliveryZone" value="Outside Dhaka" onchange="setBagZone(130, 'Outside Dhaka')" class="accent-rose-500">
+              </div>
+              <span class="text-sm font-bold theme-accent-text mt-1">৳130</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Guest Checkout Form (No login or password required) -->
+        <form id="drawerCheckoutForm" onsubmit="handleDrawerCODOrder(event)" class="space-y-3">
+          <div class="space-y-1">
+            <label class="block text-[11px] uppercase tracking-wider font-semibold opacity-80">Your Full Name *</label>
+            <input type="text" id="custName" required placeholder="e.g. Farhana Ahmed" class="w-full text-xs p-3 rounded-xl border theme-surface focus:outline-none focus:ring-1 focus:ring-rose-500">
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-[11px] uppercase tracking-wider font-semibold opacity-80">Mobile Number (BD) *</label>
+            <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" class="w-full text-xs p-3 rounded-xl border theme-surface focus:outline-none focus:ring-1 focus:ring-rose-500">
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-[11px] uppercase tracking-wider font-semibold opacity-80">Full Delivery Address *</label>
+            <textarea id="custAddress" required rows="2" placeholder="House/Road/Area, District" class="w-full text-xs p-3 rounded-xl border theme-surface focus:outline-none focus:ring-1 focus:ring-rose-500 resize-none"></textarea>
+          </div>
+
+          <!-- Price Calculation Breakdown -->
+          <div class="theme-panel rounded-xl p-3 border space-y-1.5 text-xs">
+            <div class="flex justify-between">
+              <span class="opacity-70">Subtotal:</span>
+              <span class="font-semibold" id="cartSubtotalText">৳1,850</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="opacity-70">Delivery (<span id="cartZoneName">Inside Dhaka</span>):</span>
+              <span class="font-semibold" id="cartDeliveryText">৳70</span>
+            </div>
+            <div class="flex justify-between border-t border-black/10 dark:border-white/10 pt-1.5 text-sm font-bold">
+              <span>Total Payable (COD):</span>
+              <span class="theme-accent-text" id="cartGrandTotalText">৳1,920</span>
+            </div>
+          </div>
+
+          <!-- Dual Checkout Buttons: WhatsApp Order + Confirm COD -->
+          <div class="pt-2 space-y-2">
+            <button type="button" onclick="checkoutDrawerWhatsApp()" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Order via WhatsApp</span>
+            </button>
+
+            <button type="submit" class="w-full py-3.5 px-4 rounded-xl theme-btn-dark font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>Confirm Cash on Delivery</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 8. FLOATING WHATSAPP & RAINBOW SPARKLE PALETTE SWITCHER      -->
+  <!-- ============================================================ -->
+  <div class="fixed bottom-6 right-5 z-40">
+    <a href="https://wa.me/qr/XX3H5YMAO6KRM1" target="_blank" rel="noopener noreferrer" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl flex items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 group" title="Chat on WhatsApp">
+      <i data-lucide="message-circle" class="w-6 h-6 stroke-[2.2]"></i>
+      <span class="sr-only">Chat on WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Sparkle Theme Switcher Center -->
+  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40">
+    <button onclick="openPaletteModal()" class="rainbow-sparkle-btn w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 group cursor-pointer" title="Live Color Palette Transition">
+      <svg class="w-6 h-6 transition-transform group-hover:rotate-45 duration-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C12 7.52285 7.52285 12 2 12C7.52285 12 12 16.4771 12 22C12 16.4771 16.4771 12 22 12C16.4771 12 12 7.52285 12 2Z" fill="url(#sparkleRainbowGrad)" />
+        <defs>
+          <linearGradient id="sparkleRainbowGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#38bdf8" />
+            <stop offset="0.33" stop-color="#f472b6" />
+            <stop offset="0.66" stop-color="#fbbf24" />
+            <stop offset="1" stop-color="#34d399" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 9. LIVE COLOR PALETTE SWITCHER MODAL / SHEET                 -->
+  <!-- ============================================================ -->
+  <div id="paletteModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="theme-surface w-full max-w-sm rounded-3xl p-6 border shadow-2xl space-y-5 transform translate-y-8 sm:translate-y-0 transition-transform duration-300" id="paletteModalCard">
+      
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="palette" class="w-4 h-4 theme-accent-text"></i>
+          <h4 class="font-luxury text-2xl font-medium">Curated Aesthetics</h4>
+        </div>
+        <button onclick="closePaletteModal()" class="p-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <p class="text-xs opacity-70">
+        Tap any palette below to watch the entire store seamlessly transition in real-time.
+      </p>
+
+      <div class="space-y-2.5">
+        <button onclick="setTheme('parisian-creme')" class="w-full p-3 rounded-2xl border flex items-center justify-between text-left hover:scale-[1.01] transition-transform theme-panel">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full border flex overflow-hidden shadow-sm">
+              <span class="w-1/2 h-full bg-[#fdf8f5]"></span>
+              <span class="w-1/2 h-full bg-[#a85464]"></span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold">Parisian Crème</p>
+              <p class="text-[10px] opacity-70">Soft blush, warm ivory &amp; burgundy</p>
+            </div>
+          </div>
+          <span id="check-parisian-creme" class="text-xs theme-accent-text font-bold">✓</span>
+        </button>
+
+        <button onclick="setTheme('bold-noir')" class="w-full p-3 rounded-2xl border flex items-center justify-between text-left hover:scale-[1.01] transition-transform theme-panel">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full border flex overflow-hidden shadow-sm">
+              <span class="w-1/2 h-full bg-[#09090b]"></span>
+              <span class="w-1/2 h-full bg-[#f4a6b8]"></span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold">Bold Noir &amp; Blush</p>
+              <p class="text-[10px] opacity-70">High-end deep black velvet &amp; pink</p>
+            </div>
+          </div>
+          <span id="check-bold-noir" class="text-xs theme-accent-text font-bold hidden">✓</span>
+        </button>
+
+        <button onclick="setTheme('rose-silk')" class="w-full p-3 rounded-2xl border flex items-center justify-between text-left hover:scale-[1.01] transition-transform theme-panel">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full border flex overflow-hidden shadow-sm">
+              <span class="w-1/2 h-full bg-[#2a161d]"></span>
+              <span class="w-1/2 h-full bg-[#fda4af]"></span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold">Rose Silk Luxury</p>
+              <p class="text-[10px] opacity-70">Rich berry noir &amp; satin rose gold</p>
+            </div>
+          </div>
+          <span id="check-rose-silk" class="text-xs theme-accent-text font-bold hidden">✓</span>
+        </button>
+
+        <button onclick="setTheme('clean-alabaster')" class="w-full p-3 rounded-2xl border flex items-center justify-between text-left hover:scale-[1.01] transition-transform theme-panel">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full border flex overflow-hidden shadow-sm">
+              <span class="w-1/2 h-full bg-[#ffffff]"></span>
+              <span class="w-1/2 h-full bg-[#111827]"></span>
+            </div>
+            <div>
+              <p class="text-xs font-semibold">Clean Minimalist Alabaster</p>
+              <p class="text-[10px] opacity-70">Editorial bright white &amp; slate noir</p>
+            </div>
+          </div>
+          <span id="check-clean-alabaster" class="text-xs theme-accent-text font-bold hidden">✓</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 10. THREE-DOT MODAL: "WHY CHOOSE US"                        -->
+  <!-- ============================================================ -->
+  <div id="whyChooseUsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="theme-surface w-full max-w-lg rounded-3xl p-6 sm:p-8 border shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest font-bold theme-accent-text">Our Core Standards</span>
+          <h3 class="font-luxury text-3xl font-medium">Why Choose tendresse.bd</h3>
+        </div>
+        <button onclick="closeWhyChooseUsModal()" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="p-4 rounded-2xl theme-panel border flex items-start space-x-3.5">
+          <div class="p-2 rounded-xl theme-surface theme-accent-text flex-shrink-0">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-sm">1. 100% Authentic Global Invoices</h5>
+            <p class="opacity-75 mt-1 leading-relaxed">Direct flagship procurement (Sephora US/UK, Ulta, Olive Young Korea). Never replica batches, never gray-market expired stock.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl theme-panel border flex items-start space-x-3.5">
+          <div class="p-2 rounded-xl theme-surface theme-accent-text flex-shrink-0">
+            <i data-lucide="truck" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-sm">2. Flat Transparent Nationwide Delivery</h5>
+            <p class="opacity-75 mt-1 leading-relaxed">Standardized rates: <strong class="text-current">৳70 Inside Dhaka</strong> (24–48 hours) and <strong class="text-current">৳130 Outside Dhaka</strong> (2–4 days nationwide). Zero hidden packing markups.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl theme-panel border flex items-start space-x-3.5">
+          <div class="p-2 rounded-xl theme-surface theme-accent-text flex-shrink-0">
+            <i data-lucide="banknote" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-sm">3. Cash on Delivery (COD) All Over Bangladesh</h5>
+            <p class="opacity-75 mt-1 leading-relaxed">Pay the delivery rider directly when your cushioned parcel arrives securely at your doorstep in any of Bangladesh’s 64 districts.</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl theme-panel border flex items-start space-x-3.5">
+          <div class="p-2 rounded-xl theme-surface theme-accent-text flex-shrink-0">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h5 class="font-bold text-sm">4. 1-on-1 Personalized Shade &amp; Routine Help</h5>
+            <p class="opacity-75 mt-1 leading-relaxed">Unsure which lip oil tint or serum matches your skin undertone? Message our beauty specialists on Instagram DM (@tendresse.bd) or WhatsApp anytime.</p>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="closeWhyChooseUsModal()" class="w-full py-3 rounded-xl theme-btn-dark font-semibold text-xs tracking-wider uppercase">
+        Understood
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 11. LAUNCH DAY WAITLIST MODAL                                -->
+  <!-- ============================================================ -->
+  <div id="launchModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="theme-surface w-full max-w-sm rounded-3xl p-6 border shadow-2xl text-center space-y-4">
+      <div class="w-12 h-12 rounded-full theme-panel flex items-center justify-center mx-auto text-rose-500">
+        <i data-lucide="bell" class="w-6 h-6"></i>
+      </div>
+      <h4 class="font-luxury text-2xl font-medium">Be First in Line</h4>
+      <p class="text-xs opacity-75 leading-relaxed">
+        Leave your mobile or WhatsApp number below to receive VIP early access and debut gifts when our full collection launches.
+      </p>
+      <form onsubmit="handleWaitlistSubmit(event)" class="space-y-3">
+        <input type="tel" id="waitlistPhone" required placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" class="w-full text-xs p-3 rounded-xl border theme-panel focus:outline-none">
+        <button type="submit" class="w-full py-3 rounded-xl theme-btn-dark font-medium text-xs tracking-wider uppercase">
+          Notify Me On Launch Day
+        </button>
+      </form>
+      <button onclick="closeLaunchModal()" class="text-[11px] opacity-60 hover:opacity-100">Cancel</button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 12. QUICK SEARCH MODAL                                       -->
+  <!-- ============================================================ -->
+  <div id="searchModal" class="fixed inset-0 z-50 flex items-start justify-center p-4 pt-20 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="theme-surface w-full max-w-md rounded-2xl p-5 border shadow-2xl space-y-4">
+      <div class="flex items-center space-x-2 border-b pb-2">
+        <i data-lucide="search" class="w-4 h-4 opacity-50"></i>
+        <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="Search products, brands, lip oils..." class="w-full bg-transparent text-sm focus:outline-none">
+        <button onclick="closeSearchModal()" class="text-xs opacity-60 hover:opacity-100">✕</button>
+      </div>
+      <div id="searchResults" class="text-xs space-y-2 max-h-48 overflow-y-auto">
+        <div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer hover:opacity-80">
+          <span>Demo Product (Curated Cosmetic)</span>
+          <span class="font-bold theme-accent-text">৳1,850</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 13. CASH ON DELIVERY SUCCESS RECEIPT MODAL                  -->
+  <!-- ============================================================ -->
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+    <div class="theme-surface w-full max-w-sm rounded-3xl p-6 border shadow-2xl text-center space-y-4">
+      <div class="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 flex items-center justify-center mx-auto">
+        <i data-lucide="check" class="w-7 h-7"></i>
+      </div>
+      <h4 class="font-luxury text-3xl font-normal">Order Confirmed!</h4>
+      <p class="text-xs opacity-75">Your Cash on Delivery parcel has been registered with tendresse.bd.</p>
+
+      <div class="theme-panel rounded-2xl p-4 text-left text-xs space-y-2 border">
+        <div class="flex justify-between border-b pb-1.5 opacity-80">
+          <span>Order ID:</span>
+          <span id="receiptId" class="font-mono font-bold theme-accent-text">#TND-4821</span>
+        </div>
+        <div class="flex justify-between opacity-80">
+          <span>Customer:</span>
+          <span id="receiptName" class="font-semibold">-</span>
+        </div>
+        <div class="flex justify-between opacity-80">
+          <span>Item:</span>
+          <span id="receiptItem">Demo Product</span>
+        </div>
+        <div class="flex justify-between opacity-80">
+          <span>Delivery Zone:</span>
+          <span id="receiptZone">Inside Dhaka (৳70)</span>
+        </div>
+        <div class="flex justify-between pt-1.5 border-t font-bold text-sm">
+          <span>Total COD Payable:</span>
+          <span id="receiptTotal" class="theme-accent-text">৳1,920</span>
+        </div>
+      </div>
+
+      <div class="space-y-2 pt-2">
+        <button onclick="copyOrderDetails()" class="w-full py-3 rounded-xl theme-panel border text-xs font-semibold flex items-center justify-center space-x-1.5">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span id="copyReceiptBtnText">Copy Receipt Text</span>
+        </button>
+        <button onclick="closeSuccessModal()" class="w-full py-3 rounded-xl theme-btn-dark text-xs font-semibold uppercase tracking-wider">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 14. FLOATING TOAST NOTIFICATION                              -->
+  <!-- ============================================================ -->
+  <div id="toastNotification" class="fixed top-20 right-4 z-50 transform translate-y-3 opacity-0 pointer-events-none transition-all duration-300 max-w-xs theme-surface border rounded-2xl p-3.5 shadow-xl flex items-center space-x-3">
+    <div id="toastIcon" class="w-6 h-6 rounded-full theme-badge flex items-center justify-center flex-shrink-0">
+      <i data-lucide="check" class="w-3.5 h-3.5"></i>
+    </div>
+    <div class="flex-1 min-w-0">
+      <p id="toastMessage" class="text-xs font-medium truncate">Item added to bag</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 15. CLEAN JAVASCRIPT (ZERO AUTH - 100% RELIABLE)             -->
+  <!-- ============================================================ -->
+  <script>
+    // WIPE ANY PREVIOUS AUTH DATA FROM USER'S BROWSER STORAGE ON LAUNCH
+    try {
+      localStorage.removeItem('tendresse_active_user');
+      localStorage.removeItem('tendresse_custom_firebase_config');
+      localStorage.removeItem('tendresse_user_orders');
+    } catch (e) {}
+
+    // Store State
+    const DEMO_UNIT_PRICE = 1850;
+    let bagQuantity = 0;
+    let productQtyToOrder = 1;
+    let bagDeliveryFee = 70;
+    let bagDeliveryZoneName = "Inside Dhaka";
+    let currentTheme = 'parisian-creme';
+
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+      renderBagView();
+    });
+
+    // -------------------------------------------------------------
+    // THEME & COLOR PALETTE SWITCHER LOGIC
+    // -------------------------------------------------------------
+    function openPaletteModal() {
+      const modal = document.getElementById('paletteModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    }
+
+    function closePaletteModal() {
+      const modal = document.getElementById('paletteModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    function setTheme(themeName) {
+      currentTheme = themeName;
+      document.documentElement.setAttribute('data-theme', themeName);
+
+      const themes = ['parisian-creme', 'bold-noir', 'rose-silk', 'clean-alabaster'];
+      themes.forEach(t => {
+        const check = document.getElementById(`check-${t}`);
+        if (check) {
+          if (t === themeName) {
+            check.classList.remove('hidden');
+          } else {
+            check.classList.add('hidden');
+          }
+        }
+      });
+
+      showToast(`Switched aesthetic to ${formatThemeName(themeName)}`);
+      setTimeout(closePaletteModal, 250);
+    }
+
+    function formatThemeName(name) {
+      if (name === 'parisian-creme') return 'Parisian Crème';
+      if (name === 'bold-noir') return 'Bold Noir & Blush';
+      if (name === 'rose-silk') return 'Rose Silk Luxury';
+      return 'Clean Minimalist Alabaster';
+    }
+
+    // -------------------------------------------------------------
+    // PRODUCT QUANTITY & BEAUTY BAG INTERACTIONS
+    // -------------------------------------------------------------
+    function updateDemoQty(delta) {
+      productQtyToOrder = Math.max(1, Math.min(10, productQtyToOrder + delta));
+      document.getElementById('productQtyDisplay').value = productQtyToOrder;
+      const subtotal = productQtyToOrder * DEMO_UNIT_PRICE;
+      document.getElementById('productSubtotalPreview').textContent = `৳${subtotal.toLocaleString()}`;
+    }
+
+    function addToBeautyBag() {
+      bagQuantity += productQtyToOrder;
+      renderBagView();
+      showToast(`Added Demo Product (Qty: ${productQtyToOrder}) to Beauty Bag!`);
+      
+      const badge = document.getElementById('bagBadgeCount');
+      badge.classList.add('scale-125');
+      setTimeout(() => badge.classList.remove('scale-125'), 250);
+    }
+
+    function instantBuyDemoProduct() {
+      if (bagQuantity === 0) {
+        bagQuantity = productQtyToOrder;
+      }
+      renderBagView();
+      toggleBeautyBagDrawer();
+    }
+
+    function renderBagView() {
+      const badge = document.getElementById('bagBadgeCount');
+      const drawerBadge = document.getElementById('drawerItemsBadge');
+      const emptyState = document.getElementById('emptyBagState');
+      const populatedState = document.getElementById('populatedBagState');
+
+      badge.textContent = bagQuantity;
+      drawerBadge.textContent = `${bagQuantity} ${bagQuantity === 1 ? 'item' : 'items'}`;
+
+      if (bagQuantity === 0) {
+        emptyState.classList.remove('hidden');
+        populatedState.classList.add('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+        populatedState.classList.remove('hidden');
+
+        document.getElementById('cartQtyNumber').textContent = bagQuantity;
+        const subtotal = bagQuantity * DEMO_UNIT_PRICE;
+        const total = subtotal + bagDeliveryFee;
+
+        document.getElementById('cartSubtotalText').textContent = `৳${subtotal.toLocaleString()}`;
+        document.getElementById('cartZoneName').textContent = bagDeliveryZoneName;
+        document.getElementById('cartDeliveryText').textContent = `৳${bagDeliveryFee}`;
+        document.getElementById('cartGrandTotalText').textContent = `৳${total.toLocaleString()}`;
+      }
+      lucide.createIcons();
+    }
+
+    function updateCartQty(delta) {
+      bagQuantity = Math.max(1, bagQuantity + delta);
+      renderBagView();
+    }
+
+    function removeDemoProductFromBag() {
+      bagQuantity = 0;
+      renderBagView();
+      showToast('Removed Demo Product from bag.');
+    }
+
+    function setBagZone(fee, name) {
+      bagDeliveryFee = fee;
+      bagDeliveryZoneName = name;
+      renderBagView();
+    }
+
+    function toggleBeautyBagDrawer() {
+      const drawer = document.getElementById('beautyBagDrawer');
+      const backdrop = document.getElementById('beautyBagDrawerBackdrop');
+      
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      if (isOpen) {
+        closeBeautyBagDrawer();
+      } else {
+        backdrop.classList.remove('hidden');
+        setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+        drawer.classList.remove('translate-x-full');
+      }
+    }
+
+    function closeBeautyBagDrawer() {
+      const drawer = document.getElementById('beautyBagDrawer');
+      const backdrop = document.getElementById('beautyBagDrawerBackdrop');
+      
+      drawer.classList.add('translate-x-full');
+      backdrop.classList.add('opacity-0');
+      setTimeout(() => backdrop.classList.add('hidden'), 300);
+    }
+
+    // -------------------------------------------------------------
+    // GUEST CHECKOUT & ORDER DISPATCH
+    // -------------------------------------------------------------
+    function checkoutDrawerWhatsApp() {
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+
+      if (!name || !phone || !address) {
+        showToast('Please fill in Name, Phone, and Address.');
+        return;
+      }
+
+      const subtotal = bagQuantity * DEMO_UNIT_PRICE;
+      const total = subtotal + bagDeliveryFee;
+      const orderId = `#TND-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      const message = `*🌸 NEW ORDER: TENDRESSE.BD 🌸*
+Order ID: ${orderId}
+Item: Demo Product × ${bagQuantity}
+Product Subtotal: ৳${subtotal.toLocaleString()}
+Delivery Zone: ${bagDeliveryZoneName} (৳${bagDeliveryFee})
+Total Payable: ৳${total.toLocaleString()} BDT
+
+*Customer Details:*
+• Name: ${name}
+• Mobile: ${phone}
+• Address: ${address}
+• Payment: Cash on Delivery (COD)
+
+Please confirm my order dispatch!`;
+
+      // Copy to clipboard
+      const el = document.createElement('textarea');
+      el.value = message;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+
+      showToast('Order copied to clipboard! Opening WhatsApp...');
+      window.open('https://wa.me/qr/XX3H5YMAO6KRM1', '_blank');
+    }
+
+    function handleDrawerCODOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const total = (bagQuantity * DEMO_UNIT_PRICE) + bagDeliveryFee;
+      const orderId = `#TND-${Math.floor(1000 + Math.random() * 9000)}`;
+
+      document.getElementById('receiptId').textContent = orderId;
+      document.getElementById('receiptName').textContent = name;
+      document.getElementById('receiptItem').textContent = `Demo Product × ${bagQuantity}`;
+      document.getElementById('receiptZone').textContent = `${bagDeliveryZoneName} (৳${bagDeliveryFee})`;
+      document.getElementById('receiptTotal').textContent = `৳${total.toLocaleString()}`;
+
+      closeBeautyBagDrawer();
+      openSuccessModal();
+    }
+
+    function openSuccessModal() {
+      const modal = document.getElementById('orderSuccessModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      lucide.createIcons();
+    }
+
+    function closeSuccessModal() {
+      const modal = document.getElementById('orderSuccessModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        bagQuantity = 0;
+        document.getElementById('drawerCheckoutForm').reset();
+        renderBagView();
+      }, 300);
+    }
+
+    function copyOrderDetails() {
+      const orderId = document.getElementById('receiptId').textContent;
+      const name = document.getElementById('receiptName').textContent;
+      const item = document.getElementById('receiptItem').textContent;
+      const total = document.getElementById('receiptTotal').textContent;
+
+      const text = `tendresse.bd Order Receipt\nID: ${orderId}\nCustomer: ${name}\nItem: ${item}\nTotal Payable: ${total}\nPayment: Cash on Delivery`;
+      
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+
+      const btn = document.getElementById('copyReceiptBtnText');
+      btn.textContent = 'Copied to Clipboard!';
+      setTimeout(() => btn.textContent = 'Copy Receipt Text', 2000);
+    }
+
+    // -------------------------------------------------------------
+    // THREE-DOT, WAITLIST, SEARCH & SOURCING MODALS
+    // -------------------------------------------------------------
+    function openWhyChooseUsModal() {
+      const modal = document.getElementById('whyChooseUsModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      lucide.createIcons();
+    }
+    function closeWhyChooseUsModal() {
+      const modal = document.getElementById('whyChooseUsModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+
+    function openLaunchModal() {
+      const modal = document.getElementById('launchModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      lucide.createIcons();
+    }
+    function closeLaunchModal() {
+      const modal = document.getElementById('launchModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+    function handleWaitlistSubmit(e) {
+      e.preventDefault();
+      const phone = document.getElementById('waitlistPhone').value;
+      closeLaunchModal();
+      showToast(`Thank you! ${phone} added to launch VIP list.`);
+    }
+
+    function openSearchModal() {
+      const modal = document.getElementById('searchModal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        document.getElementById('searchInput').focus();
+      }, 10);
+      lucide.createIcons();
+    }
+    function closeSearchModal() {
+      const modal = document.getElementById('searchModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+    }
+    function handleSearch(val) {
+      const res = document.getElementById('searchResults');
+      if (val.trim() === '') {
+        res.innerHTML = `<div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer"><span>Demo Product (Curated Cosmetic)</span><span class="font-bold theme-accent-text">৳1,850</span></div>`;
+      } else {
+        res.innerHTML = `<div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer"><span>Demo Product matching "${val}"</span><span class="font-bold theme-accent-text">৳1,850</span></div>`;
+      }
+    }
+    function selectSearchResult() {
+      closeSearchModal();
+      document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Custom Sourcing Concierge
+    function openCustomBrandModal() {
+      const m = document.getElementById('customBrandModal');
+      m.classList.remove('hidden');
+      setTimeout(() => m.classList.remove('opacity-0'), 10);
+    }
+    function closeCustomBrandModal() {
+      const m = document.getElementById('customBrandModal');
+      m.classList.add('opacity-0');
+      setTimeout(() => m.classList.add('hidden'), 300);
+    }
+    function handleCustomSourcingSubmit(e) {
+      e.preventDefault();
+      const item = document.getElementById('customItemName').value;
+      const phone = document.getElementById('customUserPhone').value;
+      const msg = `*🌸 CUSTOM BRAND SOURCING REQUEST 🌸*\nBrand/Product: ${item}\nCustomer Mobile: ${phone}\n\nHi tendresse.bd team, please let me know availability and pricing!`;
+      
+      const tempArea = document.createElement('textarea');
+      tempArea.value = msg;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempArea);
+
+      showToast('Request copied! Opening WhatsApp...');
+      window.open('https://wa.me/qr/XX3H5YMAO6KRM1', '_blank');
+      closeCustomBrandModal();
+    }
+
+    // -------------------------------------------------------------
+    // SIDE MENU & ACCORDION INTERACTIONS
+    // -------------------------------------------------------------
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('sideMenuDrawer');
+      const isClosed = drawer.classList.contains('-translate-x-full');
+      if (isClosed) {
+        openSideMenu();
+      } else {
+        closeSideMenu();
+      }
+    }
+
+    function openSideMenu() {
+      const drawer = document.getElementById('sideMenuDrawer');
+      const backdrop = document.getElementById('sideMenuBackdrop');
+      backdrop.classList.remove('hidden');
+      setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+      drawer.classList.remove('-translate-x-full');
+    }
+
+    function closeSideMenu() {
+      const drawer = document.getElementById('sideMenuDrawer');
+      const backdrop = document.getElementById('sideMenuBackdrop');
+      drawer.classList.add('-translate-x-full');
+      backdrop.classList.add('opacity-0');
+      setTimeout(() => backdrop.classList.add('hidden'), 300);
+    }
+
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById(`icon-${id}`);
+      const isHidden = el.classList.contains('hidden');
+
+      if (isHidden) {
+        el.classList.remove('hidden');
+        if (icon) icon.textContent = '−';
+      } else {
+        el.classList.add('hidden');
+        if (icon) icon.textContent = '+';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // FLOATING TOAST HELPER
+    // -------------------------------------------------------------
+    let toastTimeout;
+    function showToast(msg) {
+      clearTimeout(toastTimeout);
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').textContent = msg;
+
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
