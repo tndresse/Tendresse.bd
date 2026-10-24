@@ -8,7 +8,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Cormorant Garamond (Editorial Luxury Serif) & Plus Jakarta Sans -->
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans & Gothic Blackletter Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* DYNAMIC LUXURY COLOR PALETTES (Live Transitions) */
+    /* DYNAMIC LUXURY COLOR PALETTES (Seamless Live Transitions) */
     :root, [data-theme="parisian-creme"] {
       --bg-page: #fdf8f5;
       --bg-surface: #ffffff;
@@ -164,16 +164,6 @@
       color: var(--accent-banner-text);
     }
 
-    /* Hide number spinners */
-    input[type='number']::-webkit-inner-spin-button,
-    input[type='number']::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    input[type='number'] {
-      -moz-appearance: textfield;
-    }
-
     /* Rainbow Sparkle Button */
     .rainbow-sparkle-btn {
       background: #181619;
@@ -201,18 +191,11 @@
   <!-- ============================================================ -->
   <header class="sticky top-0 z-40 theme-header backdrop-blur-md border-b px-4 sm:px-6 h-16 flex items-center justify-between">
     
-    <!-- Left Navigation Controls: Hamburger + Three-Dot Button -->
+    <!-- Left Navigation Controls: Hamburger Menu -->
     <div class="flex items-center space-x-2 sm:space-x-3">
       <!-- Hamburger Menu -->
       <button onclick="toggleMobileMenu()" class="p-2 -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Open Navigation">
         <i data-lucide="menu" class="w-5 h-5"></i>
-      </button>
-
-      <!-- Three-Dot Button (Opens "Why Choose Us" Modal) -->
-      <button onclick="openWhyChooseUsModal()" class="flex items-center space-x-1 px-2 py-1.5 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors group" title="Why Choose Us">
-        <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-current opacity-70 group-hover:opacity-100"></span>
       </button>
     </div>
 
@@ -226,7 +209,7 @@
       </span>
     </a>
 
-    <!-- Right Controls: Search Icon & Circular Shopping Bag Icon with Live Badge -->
+    <!-- Right Controls: Search Icon & Circular Shopping Bag Icon with Live Badge (0 items) -->
     <div class="flex items-center space-x-2">
       <!-- Search Button -->
       <button onclick="openSearchModal()" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors" aria-label="Search">
@@ -244,7 +227,7 @@
   </header>
 
   <!-- ============================================================ -->
-  <!-- 3. SLIDE-OUT MENU DRAWER (PURE CATEGORIES - NO AUTH/NO LOGIN)-->
+  <!-- 3. SLIDE-OUT MENU DRAWER (PURE CATEGORIES - NO AUTH)         -->
   <!-- ============================================================ -->
   <div id="sideMenuBackdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeSideMenu()"></div>
 
@@ -355,15 +338,7 @@
         </div>
       </div>
 
-      <!-- 8. Clearance Sale -->
-      <div class="py-2.5">
-        <a href="#product-section" onclick="closeSideMenu()" class="flex items-center justify-between py-1.5 text-left font-medium text-rose-500 hover:text-rose-600 transition-colors">
-          <span>Clearance Sale</span>
-          <span class="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-500">Last Drops</span>
-        </a>
-      </div>
-
-      <!-- 9. Men -->
+      <!-- 8. Men -->
       <div class="py-2.5">
         <button onclick="toggleAccordion('cat-men')" class="w-full flex items-center justify-between py-1.5 text-left font-medium text-current hover:text-rose-500 transition-colors">
           <span>Men</span>
@@ -423,16 +398,11 @@
         Welcome to <strong class="font-semibold text-current">tendresse<span class="text-[10px] font-mono">.BD</span></strong>. We curate verified, cult-favorite international cosmetics, barrier-nourishing skincare, and dreamy lip oils—brought directly to your vanity with tailored local doorstep care across Bangladesh.
       </p>
 
-      <!-- Dual Call to Action Buttons -->
-      <div class="space-y-3 max-w-md mx-auto">
-        <!-- Preview Debut Drops Button -->
-        <a href="#product-section" class="w-full py-4 px-6 rounded-full theme-btn-dark font-medium text-xs sm:text-sm tracking-wider flex items-center justify-center space-x-2 shadow-md hover:opacity-95 active:scale-[0.99] transition-all">
-          <span>Preview Debut Drops ↓</span>
-        </a>
-
+      <!-- Primary Call to Action Button -->
+      <div class="max-w-md mx-auto">
         <!-- DM on Instagram Button -->
-        <a href="https://www.instagram.com/tendresse.bd?srtk=bzQyODBpeXhkcjU2" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-full theme-btn-light border font-medium text-xs sm:text-sm tracking-wider flex items-center justify-center space-x-2 shadow-sm hover:border-current active:scale-[0.99] transition-all">
-          <i data-lucide="instagram" class="w-4 h-4 theme-accent-text"></i>
+        <a href="https://www.instagram.com/tendresse.bd?srtk=bzQyODBpeXhkcjU2" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-6 rounded-full theme-btn-dark font-medium text-xs sm:text-sm tracking-wider flex items-center justify-center space-x-2 shadow-md hover:opacity-95 active:scale-[0.99] transition-all">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
           <span>DM on Instagram</span>
         </a>
       </div>
@@ -458,7 +428,7 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- 5. SPOTLIGHT SECTION (COMING SOON)                           -->
+    <!-- 5. SPOTLIGHT SECTION (GOTHIC "will be here soon.")           -->
     <!-- ============================================================ -->
     <section id="product-section" class="py-24 sm:py-32 px-4 sm:px-6 max-w-4xl mx-auto text-center flex items-center justify-center">
       <h2 class="font-gothic text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide theme-accent-text lowercase transition-all duration-300 drop-shadow-sm select-none">
@@ -467,7 +437,7 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- 6. ABOUT & FOOTER SECTION (MATCHING SCREENSHOT EXACTLY)      -->
+    <!-- 6. ABOUT & FOOTER SECTION (WITH UPDATED FACEBOOK LINK)      -->
     <!-- ============================================================ -->
     <footer id="about-brand" class="bg-[#19171a] text-white pt-14 pb-28 px-6 sm:px-8 border-t border-white/5 transition-colors duration-300">
       <div class="max-w-xl mx-auto space-y-9 text-left">
@@ -496,8 +466,8 @@
             </svg>
           </a>
 
-          <!-- Facebook -->
-          <a href="https://www.facebook.com/share/1CXNJSd2bs/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-[#29262b] hover:bg-[#38333b] border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 shadow-sm" aria-label="Facebook Page">
+          <!-- Facebook (Updated Link) -->
+          <a href="https://www.facebook.com/share/1FQKgpNPLq/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-[#29262b] hover:bg-[#38333b] border border-white/10 flex items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 shadow-sm" aria-label="Facebook Page">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
             </svg>
@@ -519,9 +489,6 @@
           <ul class="space-y-2.5 text-xs sm:text-sm text-neutral-400 font-light">
             <li>
               <a href="#" class="hover:text-white transition-colors block py-0.5">Home</a>
-            </li>
-            <li>
-              <a href="#product-section" class="hover:text-white transition-colors block py-0.5">Debut Drop Preview</a>
             </li>
             <li>
               <button type="button" onclick="openSideMenu()" class="hover:text-white transition-colors block py-0.5 text-left">Beauty Categories</button>
@@ -604,7 +571,7 @@
   </main>
 
   <!-- ============================================================ -->
-  <!-- 7. BEAUTY BAG DRAWER (EMPTY & POPULATED STATES)              -->
+  <!-- 7. BEAUTY BAG DRAWER (EMPTY STATE AS REQUESTED)              -->
   <!-- ============================================================ -->
   <div id="beautyBagDrawerBackdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" onclick="closeBeautyBagDrawer()"></div>
 
@@ -623,10 +590,10 @@
       </button>
     </div>
 
-    <!-- DRAWER BODY CONTENT -->
+    <!-- DRAWER BODY CONTENT: EMPTY STATE -->
     <div class="flex-1 overflow-y-auto p-6 flex flex-col justify-between">
       
-      <!-- STATE A: EMPTY STATE (MATCHING SCREENSHOT 2 EXACTLY) -->
+      <!-- EMPTY STATE (MATCHING SCREENSHOT 2) -->
       <div id="emptyBagState" class="my-auto text-center space-y-6">
         <div class="w-24 h-24 rounded-full theme-panel flex items-center justify-center mx-auto shadow-inner">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-[#9a4b59]">
@@ -656,108 +623,6 @@
         <p class="text-[11px] opacity-70 theme-accent-text font-medium pt-4">
           Complimentary delivery on first drop pre-orders
         </p>
-      </div>
-
-      <!-- STATE B: POPULATED STATE (FRICTIONLESS GUEST CHECKOUT) -->
-      <div id="populatedBagState" class="hidden space-y-6">
-        
-        <!-- Cart Item Summary -->
-        <div class="theme-panel rounded-2xl p-4 border space-y-3">
-          <div class="flex items-center space-x-3">
-            <div class="w-16 h-16 rounded-xl theme-surface border flex items-center justify-center flex-shrink-0">
-              <i data-lucide="sparkles" class="w-7 h-7 theme-accent-text"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center justify-between">
-                <h5 class="font-luxury text-xl font-medium truncate">Demo Product</h5>
-                <button onclick="removeDemoProductFromBag()" class="text-rose-500 hover:text-rose-700 p-1" title="Remove item">
-                  <i data-lucide="trash-2" class="w-4 h-4"></i>
-                </button>
-              </div>
-              <p class="text-xs opacity-70">Authentic Import • 50 ML</p>
-              <div class="flex items-center justify-between mt-2">
-                <span class="text-sm font-bold theme-accent-text">৳1,850 BDT</span>
-                <div class="flex items-center space-x-2 theme-surface border rounded-lg px-2 py-0.5">
-                  <button onclick="updateCartQty(-1)" class="text-xs font-bold px-1 hover:text-rose-500">-</button>
-                  <span id="cartQtyNumber" class="text-xs font-semibold w-4 text-center">1</span>
-                  <button onclick="updateCartQty(1)" class="text-xs font-bold px-1 hover:text-rose-500">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Delivery Fee Selector -->
-        <div class="space-y-2">
-          <label class="block text-xs uppercase tracking-wider font-semibold opacity-80">
-            Delivery Location &amp; Rates
-          </label>
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <label class="p-3 rounded-xl border cursor-pointer theme-surface has-[:checked]:border-rose-500 has-[:checked]:ring-1 has-[:checked]:ring-rose-500 flex flex-col justify-between">
-              <div class="flex items-center justify-between">
-                <span class="font-semibold">Inside Dhaka</span>
-                <input type="radio" id="zoneRadioDhaka" name="bagDeliveryZone" value="Inside Dhaka" checked onchange="setBagZone(70, 'Inside Dhaka')" class="accent-rose-500">
-              </div>
-              <span class="text-sm font-bold theme-accent-text mt-1">৳70</span>
-            </label>
-
-            <label class="p-3 rounded-xl border cursor-pointer theme-surface has-[:checked]:border-rose-500 has-[:checked]:ring-1 has-[:checked]:ring-rose-500 flex flex-col justify-between">
-              <div class="flex items-center justify-between">
-                <span class="font-semibold">Outside Dhaka</span>
-                <input type="radio" id="zoneRadioOutside" name="bagDeliveryZone" value="Outside Dhaka" onchange="setBagZone(130, 'Outside Dhaka')" class="accent-rose-500">
-              </div>
-              <span class="text-sm font-bold theme-accent-text mt-1">৳130</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Guest Checkout Form (No login or password required) -->
-        <form id="drawerCheckoutForm" onsubmit="handleDrawerCODOrder(event)" class="space-y-3">
-          <div class="space-y-1">
-            <label class="block text-[11px] uppercase tracking-wider font-semibold opacity-80">Your Full Name *</label>
-            <input type="text" id="custName" required placeholder="e.g. Farhana Ahmed" class="w-full text-xs p-3 rounded-xl border theme-surface focus:outline-none focus:ring-1 focus:ring-rose-500">
-          </div>
-
-          <div class="space-y-1">
-            <label class="block text-[11px] uppercase tracking-wider font-semibold opacity-80">Mobile Number (BD) *</label>
-            <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" class="w-full text-xs p-3 rounded-xl border theme-surface focus:outline-none focus:ring-1 focus:ring-rose-500">
-          </div>
-
-          <div class="space-y-1">
-            <label class="block text-[11px] uppercase tracking-wider font-semibold opacity-80">Full Delivery Address *</label>
-            <textarea id="custAddress" required rows="2" placeholder="House/Road/Area, District" class="w-full text-xs p-3 rounded-xl border theme-surface focus:outline-none focus:ring-1 focus:ring-rose-500 resize-none"></textarea>
-          </div>
-
-          <!-- Price Calculation Breakdown -->
-          <div class="theme-panel rounded-xl p-3 border space-y-1.5 text-xs">
-            <div class="flex justify-between">
-              <span class="opacity-70">Subtotal:</span>
-              <span class="font-semibold" id="cartSubtotalText">৳1,850</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="opacity-70">Delivery (<span id="cartZoneName">Inside Dhaka</span>):</span>
-              <span class="font-semibold" id="cartDeliveryText">৳70</span>
-            </div>
-            <div class="flex justify-between border-t border-black/10 dark:border-white/10 pt-1.5 text-sm font-bold">
-              <span>Total Payable (COD):</span>
-              <span class="theme-accent-text" id="cartGrandTotalText">৳1,920</span>
-            </div>
-          </div>
-
-          <!-- Dual Checkout Buttons: WhatsApp Order + Confirm COD -->
-          <div class="pt-2 space-y-2">
-            <button type="button" onclick="checkoutDrawerWhatsApp()" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
-              <span>Order via WhatsApp</span>
-            </button>
-
-            <button type="submit" class="w-full py-3.5 px-4 rounded-xl theme-btn-dark font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md">
-              <i data-lucide="check-circle" class="w-4 h-4"></i>
-              <span>Confirm Cash on Delivery</span>
-            </button>
-          </div>
-        </form>
-
       </div>
 
     </div>
@@ -968,93 +833,40 @@
       </div>
       <div id="searchResults" class="text-xs space-y-2 max-h-48 overflow-y-auto">
         <div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer hover:opacity-80">
-          <span>Demo Product (Curated Cosmetic)</span>
-          <span class="font-bold theme-accent-text">৳1,850</span>
+          <span>Debut Collection Drops</span>
+          <span class="font-bold theme-accent-text">Soon</span>
         </div>
       </div>
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- 13. CASH ON DELIVERY SUCCESS RECEIPT MODAL                  -->
-  <!-- ============================================================ -->
-  <div id="orderSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
-    <div class="theme-surface w-full max-w-sm rounded-3xl p-6 border shadow-2xl text-center space-y-4">
-      <div class="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 flex items-center justify-center mx-auto">
-        <i data-lucide="check" class="w-7 h-7"></i>
-      </div>
-      <h4 class="font-luxury text-3xl font-normal">Order Confirmed!</h4>
-      <p class="text-xs opacity-75">Your Cash on Delivery parcel has been registered with tendresse.bd.</p>
-
-      <div class="theme-panel rounded-2xl p-4 text-left text-xs space-y-2 border">
-        <div class="flex justify-between border-b pb-1.5 opacity-80">
-          <span>Order ID:</span>
-          <span id="receiptId" class="font-mono font-bold theme-accent-text">#TND-4821</span>
-        </div>
-        <div class="flex justify-between opacity-80">
-          <span>Customer:</span>
-          <span id="receiptName" class="font-semibold">-</span>
-        </div>
-        <div class="flex justify-between opacity-80">
-          <span>Item:</span>
-          <span id="receiptItem">Demo Product</span>
-        </div>
-        <div class="flex justify-between opacity-80">
-          <span>Delivery Zone:</span>
-          <span id="receiptZone">Inside Dhaka (৳70)</span>
-        </div>
-        <div class="flex justify-between pt-1.5 border-t font-bold text-sm">
-          <span>Total COD Payable:</span>
-          <span id="receiptTotal" class="theme-accent-text">৳1,920</span>
-        </div>
-      </div>
-
-      <div class="space-y-2 pt-2">
-        <button onclick="copyOrderDetails()" class="w-full py-3 rounded-xl theme-panel border text-xs font-semibold flex items-center justify-center space-x-1.5">
-          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-          <span id="copyReceiptBtnText">Copy Receipt Text</span>
-        </button>
-        <button onclick="closeSuccessModal()" class="w-full py-3 rounded-xl theme-btn-dark text-xs font-semibold uppercase tracking-wider">
-          Done
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================ -->
-  <!-- 14. FLOATING TOAST NOTIFICATION                              -->
+  <!-- 13. FLOATING TOAST NOTIFICATION                              -->
   <!-- ============================================================ -->
   <div id="toastNotification" class="fixed top-20 right-4 z-50 transform translate-y-3 opacity-0 pointer-events-none transition-all duration-300 max-w-xs theme-surface border rounded-2xl p-3.5 shadow-xl flex items-center space-x-3">
     <div id="toastIcon" class="w-6 h-6 rounded-full theme-badge flex items-center justify-center flex-shrink-0">
       <i data-lucide="check" class="w-3.5 h-3.5"></i>
     </div>
     <div class="flex-1 min-w-0">
-      <p id="toastMessage" class="text-xs font-medium truncate">Item added to bag</p>
+      <p id="toastMessage" class="text-xs font-medium truncate">Notification</p>
     </div>
   </div>
 
   <!-- ============================================================ -->
-  <!-- 15. CLEAN JAVASCRIPT (ZERO AUTH - 100% RELIABLE)             -->
+  <!-- 14. CLEAN CLIENT SCRIPT                                      -->
   <!-- ============================================================ -->
   <script>
-    // WIPE ANY PREVIOUS AUTH DATA FROM USER'S BROWSER STORAGE ON LAUNCH
+    // Clean any prior auth artifacts
     try {
       localStorage.removeItem('tendresse_active_user');
       localStorage.removeItem('tendresse_custom_firebase_config');
       localStorage.removeItem('tendresse_user_orders');
     } catch (e) {}
 
-    // Store State
-    const DEMO_UNIT_PRICE = 1850;
-    let bagQuantity = 0;
-    let productQtyToOrder = 1;
-    let bagDeliveryFee = 70;
-    let bagDeliveryZoneName = "Inside Dhaka";
     let currentTheme = 'parisian-creme';
 
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
-      renderBagView();
     });
 
     // -------------------------------------------------------------
@@ -1100,78 +912,8 @@
     }
 
     // -------------------------------------------------------------
-    // PRODUCT QUANTITY & BEAUTY BAG INTERACTIONS
+    // BEAUTY BAG DRAWER INTERACTIONS (EMPTY STATE)
     // -------------------------------------------------------------
-    function updateDemoQty(delta) {
-      productQtyToOrder = Math.max(1, Math.min(10, productQtyToOrder + delta));
-      document.getElementById('productQtyDisplay').value = productQtyToOrder;
-      const subtotal = productQtyToOrder * DEMO_UNIT_PRICE;
-      document.getElementById('productSubtotalPreview').textContent = `৳${subtotal.toLocaleString()}`;
-    }
-
-    function addToBeautyBag() {
-      bagQuantity += productQtyToOrder;
-      renderBagView();
-      showToast(`Added Demo Product (Qty: ${productQtyToOrder}) to Beauty Bag!`);
-      
-      const badge = document.getElementById('bagBadgeCount');
-      badge.classList.add('scale-125');
-      setTimeout(() => badge.classList.remove('scale-125'), 250);
-    }
-
-    function instantBuyDemoProduct() {
-      if (bagQuantity === 0) {
-        bagQuantity = productQtyToOrder;
-      }
-      renderBagView();
-      toggleBeautyBagDrawer();
-    }
-
-    function renderBagView() {
-      const badge = document.getElementById('bagBadgeCount');
-      const drawerBadge = document.getElementById('drawerItemsBadge');
-      const emptyState = document.getElementById('emptyBagState');
-      const populatedState = document.getElementById('populatedBagState');
-
-      badge.textContent = bagQuantity;
-      drawerBadge.textContent = `${bagQuantity} ${bagQuantity === 1 ? 'item' : 'items'}`;
-
-      if (bagQuantity === 0) {
-        emptyState.classList.remove('hidden');
-        populatedState.classList.add('hidden');
-      } else {
-        emptyState.classList.add('hidden');
-        populatedState.classList.remove('hidden');
-
-        document.getElementById('cartQtyNumber').textContent = bagQuantity;
-        const subtotal = bagQuantity * DEMO_UNIT_PRICE;
-        const total = subtotal + bagDeliveryFee;
-
-        document.getElementById('cartSubtotalText').textContent = `৳${subtotal.toLocaleString()}`;
-        document.getElementById('cartZoneName').textContent = bagDeliveryZoneName;
-        document.getElementById('cartDeliveryText').textContent = `৳${bagDeliveryFee}`;
-        document.getElementById('cartGrandTotalText').textContent = `৳${total.toLocaleString()}`;
-      }
-      lucide.createIcons();
-    }
-
-    function updateCartQty(delta) {
-      bagQuantity = Math.max(1, bagQuantity + delta);
-      renderBagView();
-    }
-
-    function removeDemoProductFromBag() {
-      bagQuantity = 0;
-      renderBagView();
-      showToast('Removed Demo Product from bag.');
-    }
-
-    function setBagZone(fee, name) {
-      bagDeliveryFee = fee;
-      bagDeliveryZoneName = name;
-      renderBagView();
-    }
-
     function toggleBeautyBagDrawer() {
       const drawer = document.getElementById('beautyBagDrawer');
       const backdrop = document.getElementById('beautyBagDrawerBackdrop');
@@ -1193,104 +935,6 @@
       drawer.classList.add('translate-x-full');
       backdrop.classList.add('opacity-0');
       setTimeout(() => backdrop.classList.add('hidden'), 300);
-    }
-
-    // -------------------------------------------------------------
-    // GUEST CHECKOUT & ORDER DISPATCH
-    // -------------------------------------------------------------
-    function checkoutDrawerWhatsApp() {
-      const name = document.getElementById('custName').value.trim();
-      const phone = document.getElementById('custPhone').value.trim();
-      const address = document.getElementById('custAddress').value.trim();
-
-      if (!name || !phone || !address) {
-        showToast('Please fill in Name, Phone, and Address.');
-        return;
-      }
-
-      const subtotal = bagQuantity * DEMO_UNIT_PRICE;
-      const total = subtotal + bagDeliveryFee;
-      const orderId = `#TND-${Math.floor(1000 + Math.random() * 9000)}`;
-
-      const message = `*🌸 NEW ORDER: TENDRESSE.BD 🌸*
-Order ID: ${orderId}
-Item: Demo Product × ${bagQuantity}
-Product Subtotal: ৳${subtotal.toLocaleString()}
-Delivery Zone: ${bagDeliveryZoneName} (৳${bagDeliveryFee})
-Total Payable: ৳${total.toLocaleString()} BDT
-
-*Customer Details:*
-• Name: ${name}
-• Mobile: ${phone}
-• Address: ${address}
-• Payment: Cash on Delivery (COD)
-
-Please confirm my order dispatch!`;
-
-      // Copy to clipboard
-      const el = document.createElement('textarea');
-      el.value = message;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-
-      showToast('Order copied to clipboard! Opening WhatsApp...');
-      window.open('https://wa.me/qr/XX3H5YMAO6KRM1', '_blank');
-    }
-
-    function handleDrawerCODOrder(e) {
-      e.preventDefault();
-      const name = document.getElementById('custName').value.trim();
-      const total = (bagQuantity * DEMO_UNIT_PRICE) + bagDeliveryFee;
-      const orderId = `#TND-${Math.floor(1000 + Math.random() * 9000)}`;
-
-      document.getElementById('receiptId').textContent = orderId;
-      document.getElementById('receiptName').textContent = name;
-      document.getElementById('receiptItem').textContent = `Demo Product × ${bagQuantity}`;
-      document.getElementById('receiptZone').textContent = `${bagDeliveryZoneName} (৳${bagDeliveryFee})`;
-      document.getElementById('receiptTotal').textContent = `৳${total.toLocaleString()}`;
-
-      closeBeautyBagDrawer();
-      openSuccessModal();
-    }
-
-    function openSuccessModal() {
-      const modal = document.getElementById('orderSuccessModal');
-      modal.classList.remove('hidden');
-      setTimeout(() => modal.classList.remove('opacity-0'), 10);
-      lucide.createIcons();
-    }
-
-    function closeSuccessModal() {
-      const modal = document.getElementById('orderSuccessModal');
-      modal.classList.add('opacity-0');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-        bagQuantity = 0;
-        document.getElementById('drawerCheckoutForm').reset();
-        renderBagView();
-      }, 300);
-    }
-
-    function copyOrderDetails() {
-      const orderId = document.getElementById('receiptId').textContent;
-      const name = document.getElementById('receiptName').textContent;
-      const item = document.getElementById('receiptItem').textContent;
-      const total = document.getElementById('receiptTotal').textContent;
-
-      const text = `tendresse.bd Order Receipt\nID: ${orderId}\nCustomer: ${name}\nItem: ${item}\nTotal Payable: ${total}\nPayment: Cash on Delivery`;
-      
-      const el = document.createElement('textarea');
-      el.value = text;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-
-      const btn = document.getElementById('copyReceiptBtnText');
-      btn.textContent = 'Copied to Clipboard!';
-      setTimeout(() => btn.textContent = 'Copy Receipt Text', 2000);
     }
 
     // -------------------------------------------------------------
@@ -1343,9 +987,9 @@ Please confirm my order dispatch!`;
     function handleSearch(val) {
       const res = document.getElementById('searchResults');
       if (val.trim() === '') {
-        res.innerHTML = `<div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer"><span>Demo Product (Curated Cosmetic)</span><span class="font-bold theme-accent-text">৳1,850</span></div>`;
+        res.innerHTML = `<div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer"><span>Debut Collection Drops</span><span class="font-bold theme-accent-text">Soon</span></div>`;
       } else {
-        res.innerHTML = `<div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer"><span>Demo Product matching "${val}"</span><span class="font-bold theme-accent-text">৳1,850</span></div>`;
+        res.innerHTML = `<div onclick="selectSearchResult()" class="p-2.5 rounded-xl theme-panel flex items-center justify-between cursor-pointer"><span>Search query: "${val}"</span><span class="font-bold theme-accent-text">Launching Soon</span></div>`;
       }
     }
     function selectSearchResult() {
@@ -1353,7 +997,7 @@ Please confirm my order dispatch!`;
       document.getElementById('product-section').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Custom Sourcing Concierge
+    // Custom Sourcing Concierge via WhatsApp
     function openCustomBrandModal() {
       const m = document.getElementById('customBrandModal');
       m.classList.remove('hidden');
